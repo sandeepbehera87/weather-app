@@ -1,0 +1,19 @@
+<div class="weather-container">
+    <div class="weather-header">
+        <h2>Weather Forecast</h2>
+    </div>
+    <div *ngIf="weatherData$ | async as weatherData">
+        <div class="container">
+            <div *ngFor="let weather of weatherData" class="weather-item">
+                <div class="weather-card">
+                    <div class="weather-temperature">{{ weather.date }}</div>
+                    <div class="weather-description">{{ weather.description }}</div>
+                    <div class="weather-details">
+                        <div>Max: {{ weather.max | fahrenheitToCelsius }} &#8451;</div>
+                        <div>Min: {{ weather.min | fahrenheitToCelsius }} &#8451;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
