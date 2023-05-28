@@ -9,7 +9,7 @@ import { WeatherData } from '../weather/weather.component';
 export class WeatherService {
 
   public apiKey: string = 'XTRtPwiRp6yhBa59oZUMc44nXpaNbTE7';
-  public apiUrl: string = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/204848`;
+  public apiUrl: string = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/204848`;
 
   constructor(private http: HttpClient) { }
 
