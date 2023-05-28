@@ -17,6 +17,7 @@ export interface WeatherData {
 })
 export class WeatherComponent implements OnInit {
   weatherData$: Observable<WeatherData[]> = of([]);
+  isLoading: boolean = true;
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit() {
@@ -26,6 +27,7 @@ export class WeatherComponent implements OnInit {
     ).subscribe(
       (weatherData) => {
         this.weatherData$ = of(weatherData);
+        this.isLoading = false;
       }
     );
   }
